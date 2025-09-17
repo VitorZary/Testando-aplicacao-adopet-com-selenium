@@ -1,4 +1,4 @@
-package br.com.vitorzary.adopet.login;
+package br.com.vitorzary.adopet.cadastro;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -21,7 +21,7 @@ public class CadastroTests {
     @Test
     public void testCadastroCorreto() throws InterruptedException {
         this.paginaCadastro.acessaPaginaDeCadastro();
-        this.paginaCadastro.preencheFormularioDeCadastro("Darlene", "darlene025@email.com", "Senha123");
+        this.paginaCadastro.preencheFormularioDeCadastro("Darlene", "darlene026@email.com", "Senha123");
         this.paginaCadastro.submeteFormularioDeCadastro();
 
         Thread.sleep(10000);

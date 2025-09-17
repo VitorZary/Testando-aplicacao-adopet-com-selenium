@@ -1,11 +1,11 @@
-package br.com.vitorzary.adopet.login;
+package br.com.vitorzary.adopet.cadastro;
 
+import br.com.vitorzary.adopet.PageObject;
 import org.openqa.selenium.By;
 
-public class CadastroPage extends PageObject{
+public class CadastroPage extends PageObject {
 
     private static final String URL_INICIAL = "https://adopet-frontend-cypress.vercel.app";
-    private static final String URL_CADASTRO = "https://adopet-frontend-cypress.vercel.app/cadastro";
     private static final String URL_LOGIN = "https://adopet-frontend-cypress.vercel.app/login";
 
     public CadastroPage() {

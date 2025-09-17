@@ -1,4 +1,4 @@
-package br.com.vitorzary.adopet.login;
+package br.com.vitorzary.adopet;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
