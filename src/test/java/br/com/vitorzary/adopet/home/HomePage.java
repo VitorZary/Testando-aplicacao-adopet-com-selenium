@@ -1,6 +1,7 @@
 package br.com.vitorzary.adopet.home;
 
 import br.com.vitorzary.adopet.PageObject;
+import br.com.vitorzary.adopet.mensagens.MensagensPage;
 import br.com.vitorzary.adopet.perfil.PerfilPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -27,4 +28,8 @@ public class HomePage extends PageObject {
         return new PerfilPage(navegador);
     }
 
+    public MensagensPage navegarParaPaginaDeMensagens() {
+        navegador.findElement(By.cssSelector(".header__message")).click();
+        return new MensagensPage(navegador);
+    }
 }
