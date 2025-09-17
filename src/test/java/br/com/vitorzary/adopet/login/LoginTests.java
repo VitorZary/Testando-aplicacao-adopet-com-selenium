@@ -19,7 +19,7 @@ public class LoginTests {
     }
 
     @Test
-    public void loginCorreto() throws InterruptedException {
+    public void testLoginCorreto() throws InterruptedException {
         paginaLogin.acessarPaginaDeLogin();
         paginaLogin.preencherFormularioDeLogin("darlene001@email.com", "Senha123");
         paginaLogin.submeteFormularioDeLogin();
@@ -29,7 +29,7 @@ public class LoginTests {
     }
 
     @Test
-    public void loginIncorreto() {
+    public void testLoginIncorreto() {
         paginaLogin.acessarPaginaDeLogin();
         paginaLogin.submeteFormularioDeLogin();
 
@@ -37,7 +37,7 @@ public class LoginTests {
     }
 
     @Test
-    public void loginFluxoAlternativo() throws InterruptedException {
+    public void testLoginFluxoAlternativo() throws InterruptedException {
         paginaLogin.acessarPaginaDeLoginViaBotaoDeMensagens();
         paginaLogin.preencherFormularioDeLogin("darlene001@email.com", "Senha123");
         paginaLogin.submeteFormularioDeLogin();
