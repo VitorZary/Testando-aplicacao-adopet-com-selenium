@@ -2,6 +2,7 @@ package br.com.vitorzary.adopet.mensagens;
 
 import br.com.vitorzary.adopet.PageObject;
 import br.com.vitorzary.adopet.home.HomePage;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -24,9 +25,16 @@ public class MensagensPage extends PageObject {
         return new HomePage(navegador);
     }
 
-    public boolean contemTexto(String texto) {
+    public boolean validarMensagensDeErro() {
         String pageSource = navegador.getPageSource();
-        return pageSource.contains(texto);
+
+        return pageSource.contains("É necessário informar seu nome") &&
+                pageSource.contains("Informe um número de telefone") &&
+                pageSource.contains("É necessário informar o nome do animal") &&
+                pageSource.contains("É necessário escrever uma mensagem");
     }
 
+    public boolean validarMensagemEnviada(String mensagem) {
+        return navegador.findElement(By.cssSelector("ul.enviadas > li:last-child")).getText().contains(mensagem);
+    }
 }
