@@ -1,14 +1,16 @@
-package br.com.vitorzary.adopet.home;
+package br.com.vitorzary.adopet.perfil;
 
+import br.com.vitorzary.adopet.home.HomePage;
 import br.com.vitorzary.adopet.login.LoginPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class HomeTests {
+public class PerfilTests {
     private LoginPage paginaLogin;
     private HomePage paginaHome;
+    private PerfilPage paginaPerfil;
 
     @BeforeEach
     public void beforeEach() throws InterruptedException {
@@ -18,6 +20,8 @@ public class HomeTests {
         this.paginaHome = this.paginaLogin.submeteFormularioDeLogin();
 
         Thread.sleep(10000);
+        this.paginaPerfil = this.paginaHome.navegarParaPaginaDePerfil();
+        Thread.sleep(2000);
     }
 
     @AfterEach
@@ -26,8 +30,8 @@ public class HomeTests {
     }
 
     @Test
-    public void testAoLogarComUmUsuarioVerificarSeNaHomeAparecemImagensDosPets() {
-        Assertions.assertTrue(this.paginaHome.verificarSeOsPetsEstaoAparecendoNaPagina());
+    public void testVerificarSeNaPaginaDePerfilApareceNomeDoUsuario() {
+        Assertions.assertTrue(paginaPerfil.verificarSeApareceONomeDoUsuario());
     }
 
 }
