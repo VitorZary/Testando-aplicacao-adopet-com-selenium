@@ -1,6 +1,8 @@
 package br.com.vitorzary.adopet.inicial;
 
 import br.com.vitorzary.adopet.PageObject;
+import br.com.vitorzary.adopet.home.HomePage;
+import org.openqa.selenium.By;
 
 public class InicialPage extends PageObject {
 
@@ -26,5 +28,10 @@ public class InicialPage extends PageObject {
     public boolean verificarseTextoQuemAmaAdotaEstaPresenteNoHTML() {
         String pageSource = navegador.getPageSource();
         return pageSource.contains("Quem ama adota!");
+    }
+
+    public HomePage clicarNoBotaoVerPetsDisponiveisParaAdocao() {
+        navegador.findElement(By.linkText("Ver pets disponíveis para adoção")).click();
+        return new HomePage(navegador);
     }
 }
