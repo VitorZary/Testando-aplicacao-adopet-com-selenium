@@ -1,6 +1,7 @@
 package br.com.vitorzary.adopet.login;
 
 import br.com.vitorzary.adopet.PageObject;
+import br.com.vitorzary.adopet.home.HomePage;
 import org.openqa.selenium.By;
 
 public class LoginPage extends PageObject {
@@ -22,8 +23,9 @@ public class LoginPage extends PageObject {
         navegador.findElement(By.id("pass")).sendKeys(senha);
     }
 
-    public void submeteFormularioDeLogin() {
+    public HomePage submeteFormularioDeLogin() {
         navegador.findElement(By.cssSelector("[data-test='submit-button']")).click();
+        return new HomePage(navegador);
     }
 
     public boolean verificarSeFezOLogin() {
